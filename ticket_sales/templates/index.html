@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}لیست کنسرت‌ها{% endblock %}
+{% block content %}
+<h1 class="text-center mb-4">کنسرت‌های موجود</h1>
+<div class="row">
+    {% for concert in concerts %}
+    <div class="col-md-4 mb-4">
+        <div class="card concert-card">
+            {% if concert.image %}
+                <img src="{{ concert.image.url }}" class="card-img-top" alt="{{ concert.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ concert.title }}</h5>
+                <p class="card-text">خواننده: {{ concert.artist }}</p>
+                <p class="card-text">تاریخ: {{ concert.date|date:"Y-m-d H:i" }}</p>
+                <p class="card-text">مکان: {{ concert.location }}</p>
+                <p class="card-text">قیمت: {{ concert.price }} تومان</p>
+                <a href="{% url 'concert_detail' concert.id %}" class="btn btn-primary">جزئیات و خرید</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">هیچ کنسرتی موجود نیست.</p>
+    {% endfor %}
+</div>
+{% endblock %}

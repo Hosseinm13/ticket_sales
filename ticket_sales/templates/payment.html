@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}پرداخت{% endblock %}
+{% block content %}
+<h1 class="text-center mb-4">پرداخت برای {{ concert.title }}</h1>
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="card_number" class="form-label">شماره کارت</label>
+                <input type="text" class="form-control" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+            </div>
+            <div class="mb-3">
+                <label for="expiry" class="form-label">تاریخ انقضا</label>
+                <input type="text" class="form-control" id="expiry" placeholder="MM/YY" required>
+            </div>
+            <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="123" required>
+            </div>
+            <button type="submit" class="btn btn-success">پرداخت</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

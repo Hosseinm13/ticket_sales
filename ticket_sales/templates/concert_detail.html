@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}جزئیات کنسرت{% endblock %}
+{% block content %}
+<h1 class="text-center mb-4">{{ concert.title }}</h1>
+<div class="card">
+    {% if concert.image %}
+        <img src="{{ concert.image.url }}" class="card-img-top" alt="{{ concert.title }}">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ concert.title }}</h5>
+        <p class="card-text">خواننده: {{ concert.artist }}</p>
+        <p class="card-text">تاریخ: {{ concert.date|date:"Y-m-d H:i" }}</p>
+        <p class="card-text">مکان: {{ concert.location }}</p>
+        <p class="card-text">قیمت: {{ concert.price }} تومان</p>
+        <p class="card-text">بلیط‌های موجود: {{ concert.available_tickets }}</p>
+        {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">خرید بلیط</button>
+            </form>
+        {% else %}
+            <p>برای خرید بلیط، لطفاً <a href="{% url 'login' %}">وارد شوید</a>.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
