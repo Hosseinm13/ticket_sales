@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazirmatn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* استایل‌های کلی */
+body {
+    font-family: 'Vazir', 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* هدر */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* اسلایدر */
+.slider-section .carousel {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.slider-section .carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slider-section .carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.slider-section .carousel-caption h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.slider-section .carousel-caption p {
+    font-size: 1rem;
+}
+
+/* فیلتر */
+.filter-section {
+    background-color: #f1f3f5;
+}
+
+.filter-section .form-select,
+.filter-section .btn {
+    height: 45px;
+    font-size: 1rem;
+}
+
+/* کارت‌های کنسرت */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* سبد خرید و پرداخت */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.alert {
+    border-radius: 8px;
+}
+
+/* فوتر */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 0.9rem;
+}
